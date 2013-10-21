@@ -16,6 +16,8 @@ if filename[-3:].lower() == "png":
     picture = png.Reader(filename)
     
 imageData = picture.read_flat()
+width = imageData[0]
+height = imageData[1]
 pixels = imageData[2]
 
 # Convert the message to a sequence of ordinal values
@@ -35,6 +37,6 @@ for ordinal in chars:
     charCount += 1
     
 outFile = open(outFilename, 'wb')
-writer = png.Writer(514, 291)
+writer = png.Writer(width, height)
 writer.write_array(outFile, pixels)
 outFile.close()

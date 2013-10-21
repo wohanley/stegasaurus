@@ -20,7 +20,7 @@ message = ""
 currentChar = ord(' ')
 charCount = 0
 
-while currentChar != ord('\0') and charCount < 50:
+while currentChar != ord('\0'):
     binString = ""
     for i in xrange(0, 8):
         if pixels[charCount * 8 + i] % 2 == 0:
